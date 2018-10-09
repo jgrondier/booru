@@ -1,7 +1,7 @@
 # Booru
 A GPL3 API wrapper for *booru image boards.
 
-Currentlz supports:
+Currently supports:
 * Gelbooru
 
 Planned: 
@@ -22,3 +22,13 @@ Here is an example:
 
     #Get an URL from the image
     br.generate_url(image)
+
+## Installing
+
+### From pip  
+TODO
+
+### From source  
+    git clone https://github.com/jgrondier/booru.git
+    cd booru
+    pip install . --user
