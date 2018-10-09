@@ -1,0 +1,2 @@
+# Booru
+A GPL3 
