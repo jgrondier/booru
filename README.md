@@ -1,5 +1,5 @@
 # Booru
-A GPL3 API wrapper for *booru image boards.
+A GPL3 python API wrapper for *booru image boards.
 
 Currently supports:
 * Gelbooru
@@ -32,3 +32,7 @@ TODO
     git clone https://github.com/jgrondier/booru.git
     cd booru
     pip install . --user
+    
+## Dependencies
+    requests
+    Python 3.x
