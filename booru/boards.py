@@ -1,8 +1,6 @@
-from enum import Enum, auto
+from enum import Enum
 
 
 class Boards(Enum):
-    GELBOORU2 = auto()
-    DANBOORU = auto()
-
-    pass
+    GELBOORU2 = 1
+    DANBOORU = 2
