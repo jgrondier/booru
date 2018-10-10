@@ -36,12 +36,9 @@ class Booru(object):
         self.request_manager = GelBooru2RequestManager(
             url=self.url, rating=rating, mandatory_tags=self.mandatory_tags, ignored_tags=self.ignored_tags)
 
-    def generate_image_url(self, image):
+    def generate_image_url(self, image, url_attribute=None):
 
-        if hasattr(image, "file_url"):
-            return image.file_url
-
-        if hasattr(image, "url"):
-            return image.url
+        if url_attribute is not None and hasattr(image, url_attribute):
+            return getattr(image, url_attribute)
 
         return "/".join([self.url, "images", image.directory, image.image])
