@@ -1,10 +1,11 @@
 from urllib.parse import urlparse, ParseResult, urljoin
 from .request_manager import GelBooru2RequestManager
+from .boards import Boards
 
 
 class Booru(object):
 
-    def __init__(self, url, type="Gelbooru2", https=True, rating=None, mandatory_tags=None, ignored_tags=None):
+    def __init__(self, url, type=Boards.GELBOORU2, https=True, rating=None, mandatory_tags=None, ignored_tags=None):
 
         parse = urlparse(url)
 
@@ -26,11 +27,12 @@ class Booru(object):
         if ignored_tags is None:
             self.ignored_tags = []
         else:
-            self.ignored_tags = [t if t.startswith("-") else "-{}".format(t) for t in ignored_tags]
+            self.ignored_tags = [t if t.startswith(
+                "-") else "-{}".format(t) for t in ignored_tags]
 
         self.rating = rating
 
-        if type is not "Gelbooru2":
+        if type is not Boards.GELBOORU2:
             raise ValueError("Currently, only Gelbooru 2 is supported !")
 
         self.request_manager = GelBooru2RequestManager(
